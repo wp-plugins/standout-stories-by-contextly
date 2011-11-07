@@ -4,7 +4,7 @@ Plugin Name: Standout Stories by Contextly
 Plugin URI: http://contextly.com
 Version: 1.00
 Author: <a href="http://www.contextly.com/">Ryan Singel</a>
-Description: Google recently announced a new system for big publishers to label their best stories and to give credit to other publications that get a "scoop" - what they call standout. Doing this gives the story a boost in Google News.
+Description: Google announced in September 2011 a new system for news publishers to label their best stories and to give credit to other publications that get a "scoop" - what Google calls standout. Doing this gives the story a boost in Google News. This plugin allows you to do both.
 */                         
 /* 
 License:
