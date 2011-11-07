@@ -2,7 +2,7 @@
 Contributors: kfmstudio, rsingel
 Tags: standout stories, SEO, promotion, Google News
 Requires at least: 2.0.2
-Tested up to: 3.2
+Tested up to: 3.2.1
 Stable tag: trunk
 
 This plugin lets you tell Google News about your excellent new post or give credit to other sites' great posts. 
