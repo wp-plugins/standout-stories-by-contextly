@@ -1,0 +1,126 @@
+/* CSS Document */
+.cso, .cso body {
+background:#FFF;
+font-family: sans-serif;
+font-size: 12px;
+}
+.cso p {
+margin: 3px;
+font-style: italic;
+line-height: 140%;
+}
+.cso .powerby {
+font-size: 11px;
+text-align:center;
+clear:left;
+}
+.cso .powerby a {
+background-image: url(../img/bg_contextly-icon.png);
+background-repeat: no-repeat;
+padding: 0px 0px 0px 18px;
+}
+#csoForm #cso-onecol {
+padding:10px 0 0;
+margin:0;
+}
+#csoForm .cso-twocol {
+margin: 0 0 10px;
+}
+#csoForm label {
+display: inline-block;
+width: 80px;
+text-align: right;
+padding-right: 5px;
+}
+#csoForm input[type="text"], #csoForm textarea {
+width: 320px;
+-moz-border-radius: 4px;
+-khtml-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+font-size: 12px;
+margin: 5px 1px 1px;
+padding: 3px;
+background-color: white;
+border: 1px solid #DFDFDF;
+}
+#cso-cancel {
+line-height: 25px;
+float: left;
+}
+#cso-cancel a {
+font-size: 11px;
+line-height: 25px;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+text-decoration: none;
+padding: 1px 2px;
+color: red;
+border-bottom-color: red;
+}
+#cso-cancel a:hover {
+color: white;
+background-color: red;
+border-bottom-color: red;
+}
+#cso-update {
+line-height: 23px;
+float: right;
+}
+#cso-submit {
+border-color: #298CBA;
+font-weight: bold;
+color: white;
+background: #21759B url(../img/button-grad.png) repeat-x scroll left top;
+text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
+text-decoration: none;
+font-size: 12px!important;
+line-height: 13px;
+padding: 3px 8px;
+cursor: pointer;
+border-width: 1px;
+border-style: solid;
+-moz-border-radius: 11px;
+-khtml-border-radius: 11px;
+-webkit-border-radius: 11px;
+border-radius: 11px;
+-moz-box-sizing: content-box;
+-webkit-box-sizing: content-box;
+-khtml-box-sizing: content-box;
+box-sizing: content-box;
+}
+#cso-submit:hover{
+border-color: #13455B;
+color: #EAF2FA;
+}
+#cso-links {
+font-size: 12px;
+overflow: auto;
+padding: 5px 0 5px 14px;
+border-top: 1px solid #DFDFDF;
+margin: 0 0 10px;
+}
+#cso-links span {
+margin-right: 25px;
+display: block;
+float: left;
+font-size: 11px;
+line-height: 18px;
+white-space: nowrap;
+cursor: default;
+}
+#cso-links span a {
+background: url(../img/xit.gif) no-repeat;
+margin: 6px 0 0 -9px;
+cursor: pointer;
+width: 10px;
+height: 10px;
+display: block;
+float: left;
+text-indent: -9999px;
+overflow: hidden;
+position: absolute;
+}
+#cso-links span a:hover {
+background: url(../img/xit.gif) no-repeat -10px 0;
+}

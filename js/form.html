@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="cso">
+<head>
+<title>Standout Stories by Contextly</title>
+<link rel="stylesheet" href="../css/contextly-standout.css">
+<script type="text/javascript" src="tiny_mce_popup.js"></script>
+<script type="text/javascript" src="json2.js"></script>
+<script type="text/javascript">
+var csoSavedURL = {
+    frm : window.parent.document.forms['post'],
+    urikey : [],
+    urival : [],
+	 init : function () {
+      var txtval = "http://"; 
+      var txtjson = {};
+		if (this.frm.elements['cso_url'].value != "") {
+         txtval = this.frm.elements['cso_url'].value;
+		}
+      if (this.frm.elements['cso_json'].value != "") {
+         txtjson = this.frm.elements['cso_json'].value;
+         var csoObj = JSON.parse(txtjson);
+         if (this.typeOf(csoObj) == 'object') {
+            this.urikey = this.urikey.concat(csoObj.key);
+            this.urival = this.urival.concat(csoObj.val);
+         }
+         this.spanlinks();
+      }
+		//document.forms['csoForm'].elements['cso_urltext'].value = txtval;
+    },
+	 callpmethod : function (frmobj) {
+	 	if (frmobj.elements['cso_urltext'].value != "http://") {
+			this.frm.elements['cso_url'].value = frmobj.elements['cso_urltext'].value;
+   		this.frm.elements['cso_checkbox'].checked = false;
+         tinyMCE.execCommand('mceInsertLink',false,{href:this.frm.elements['cso_url'].value, target:'_blank'});
+         var csoSelected = tinyMCE.execCommand('csoURLBoxRelay',false);
+         if (csoSelected) {
+            this.urikey.push(csoSelected);
+            this.urival.push(frmobj.elements['cso_urltext'].value);
+            var csoTxt = JSON.stringify({'key' : this.urikey, 'val' : this.urival});
+            this.frm.elements['cso_json'].value = csoTxt;
+         }
+		}
+   	tinyMCEPopup.close();
+	 },
+    typeOf : function (jsonObj) {
+      var s = typeof jsonObj;
+      if (s === 'object') {
+         if (jsonObj) {
+            if (typeof jsonObj.length === 'number' &&
+               !(jsonObj.propertyIsEnumerable('length')) &&
+               typeof jsonObj.splice === 'function') {
+                  s = 'array';
+            }
+         } else {
+            s = 'null';
+         }
+      }
+      return s;
+    },
+    spanlinks : function () {
+      var dv = document.getElementById('cso-links');
+      for(var i=0;i<this.urikey.length;i++) {
+         var sp = document.createElement('span');
+         sp.setAttribute('id', 'sp-'+i);
+         var at = document.createElement('a');
+         at.setAttribute('id', 'link-'+i);
+         at.className = 'xbutton';
+         at.onmousedown = function(evt) {
+            var alink = null;
+            var evt = (evt) ? evt : event;
+            if(evt.srcElement) {
+               alink = evt.srcElement;
+            } else if(evt.target) {
+               alink = evt.target;
+            }
+            dvv = document.getElementById('cso-links');
+            dvv.removeChild(alink.parentNode);
+            var idr = alink.id.split(/-/);
+            frm = window.parent.document.forms['post'];
+            var vkey = [];
+            var vval = [];
+            var csoObj = JSON.parse(frm.elements['cso_json'].value);
+            if (csoSavedURL.typeOf(csoObj) == 'object') {
+               vkey = vkey.concat(csoObj.key);
+               vval = vval.concat(csoObj.val);
+            }
+            for(var i=0;i<vkey.length;i++) {
+               if (vkey[i] == csoSavedURL.urikey[idr[1]]) {
+                  vkey.splice(i,1);
+                  vval.splice(i,1);
+                  break;
+               }
+            }
+            var csoTxt = JSON.stringify({'key' : vkey, 'val' : vval});
+            frm.elements['cso_json'].value = csoTxt;
+		   }
+         var xt = document.createTextNode('X');
+         at.appendChild(xt);
+         var tt = document.createTextNode("\u00A0"+this.urikey[i]);
+         sp.appendChild(at);
+         sp.appendChild(tt);
+         dv.appendChild(sp);
+      }
+    }
+}
+tinyMCEPopup.onInit.add(csoSavedURL.init, csoSavedURL);
+</script>
+</head>
+<body>
+<form id="csoForm" name="csoForm" onsubmit="csoSavedURL.callpmethod(this)">
+   <div id="cso-onecol">
+   	<p>Enter the destination URL</p>
+      <p><label for="cso_urltext">URL</label>
+         <input id="cso_urltext" type="text" name="cso_urltext" value="http://"></p>
+      <p style="text-align:center">Give credit to other sites for their great work. Do this as often as you like.</p>
+   </div>
+   <div class="cso-twocol">
+      <div id="cso-cancel"> <a href="javascript:tinyMCEPopup.close();">Cancel</a> </div>
+      <div id="cso-update"> <input type="submit" name="cso-submit" id="cso-submit" value="Add Link"> </div>
+      <br style="clear:both" />
+   </div>
+   <div id="cso-links">
+   </div>
+   <p class="powerby"> <a href="http://contextly.com" title="Powered by Contextly" target="_blank">
+   Powered by Contextly</a>, a related links service.</p>
+</form>
+<script type="text/javascript">
+//tinyMCEPopup.onInit.add(csoSavedURL.init, csoSavedURL);
+</script>
+</body>
+</html>
