@@ -5,7 +5,25 @@ Plugin URI: http://contextly.com
 Version: 1.00
 Author: <a href="http://www.contextly.com/">Ryan Singel</a>
 Description: Google recently announced a new system for big publishers to label their best stories and to give credit to other publications that get a "scoop" - what they call standout. Doing this gives the story a boost in Google News.
+*/                         
+/* 
+License:
+  This file is part of Standout Stories by Contextly.
+
+    Standout Stories by Contextly is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version.
+
+    Standout Stories by Contextly is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 
 if (!class_exists("ContextlyStandout")) {
    class ContextlyStandout {
@@ -97,7 +115,7 @@ if (!class_exists("ContextlyStandout")) {
       function csoPostEdit ($post_id) 
       {
          // verify if this is an auto save routine. 
-         // If it is our form has not been submitted, so we dont want to do anything
+         // If it is, our form has not been submitted, so we don't want to do anything
          if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
          return;
 
