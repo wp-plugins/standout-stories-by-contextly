@@ -5,7 +5,7 @@ Requires at least: 2.0.2
 Tested up to: 3.2
 Stable tag: trunk
 
-This plugin lets you tell Google News about your excellent new post or give credit to other site's great posts. 
+This plugin lets you tell Google News about your excellent new post or give credit to other sites' great posts. 
 
 == Description ==
 
@@ -38,14 +38,14 @@ Google says it will use the standout story links as part of its determination of
 
 = So this is Google only? What about Yahoo News? =  
 
-The tags are visible to any search spider so if it's a useful signal, expect other aggregation sites use it as well.
+The tags are visible to any search spider so if it's a useful signal, expect other aggregation sites will use it as well.
 
 
 
 == Screenshots ==
 
-1. This button on the right rail lets you compliment your own stories and keeps track of how many you have left this week.(png|jpg|jpeg|gif). Note that the screenshot is taken from the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This shows how you can give credit to other stories by clicking the red S button, next to Wordpress's link buttons in the Visual Editor, to create a link to the other site's story both in your post and in your header.
+1. This button on the right rail lets you compliment your own stories and keeps track of how many you have left this week.
+1. This shows how you can give credit to other stories by clicking the red S button, next to Wordpress's link buttons in the Visual Editor, to create a link to the other site's story both in your post and in your header.
 
 == Changelog ==
 
@@ -58,5 +58,5 @@ The tags are visible to any search spider so if it's a useful signal, expect oth
 
 == About Contextly ==
 
-Started by veteran online journalist Ryan Singel, a longtime writer and editor for Wired, Contextly creates tools for sites that care about their content. Our flagship product is a related links tool that helps readers find interesting stories to read and puts stories into context. The tool helps publishers get more page views, demonstrate their authority, get more page views, and get more revenue. All without poor quality links to low-quality content on other sites.
+Contextly creates tools for sites that care about their content. [Contextly](http://contextly.com "Contextly") was founded in 2010 by veteran online journalist Ryan Singel, a longtime writer and editor for Wired, Our flagship product is a related links tool that helps readers find interesting stories to read and puts stories into context. The tool helps publishers get more page views, demonstrate their authority, get more page views, and get more revenue. All without poor quality links to low-quality content on other sites.
 
