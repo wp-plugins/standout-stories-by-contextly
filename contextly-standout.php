@@ -145,20 +145,18 @@ if (!class_exists("ContextlyStandout")) {
                   update_post_meta($post_id, $this->csoKey, $currentval);
                }
             }
-            delete_post_meta($post_id, $this->csoLnk);
          } else {
-            delete_post_meta($post_id, $this->csoKey);
-				$linkval = "";
-				if (isset($_POST['cso_url']) and $_POST['cso_url'] != "http://") {
-               $linkval = htmlentities($_POST['cso_url'], ENT_QUOTES);
-               $linkjson= htmlentities($_POST['cso_json'], ENT_QUOTES);
-               update_post_meta($post_id, $this->csoLnk, $linkval);
-               update_post_meta($post_id, $this->csoJson, $linkjson);
-				} else {
-               delete_post_meta($post_id, $this->csoLnk);
-               delete_post_meta($post_id, $this->csoJson);
-				}				
+           delete_post_meta($post_id, $this->csoKey); 
          }
+         if (isset($_POST['cso_url']) and $_POST['cso_url'] != "http://" and isset($_POST['cso_json'])) {
+            $linkval = htmlentities($_POST['cso_url'], ENT_QUOTES);
+            $linkjson= htmlentities($_POST['cso_json'], ENT_QUOTES);
+            update_post_meta($post_id, $this->csoLnk, $linkval);
+            update_post_meta($post_id, $this->csoJson, $linkjson);
+         } else {
+            delete_post_meta($post_id, $this->csoLnk);
+            delete_post_meta($post_id, $this->csoJson);
+         }				
       }
 
       function csoLinkHead ()
@@ -174,15 +172,13 @@ if (!class_exists("ContextlyStandout")) {
          $linkjson= html_entity_decode(get_post_meta($post->ID, $this->csoJson, true));
 			if ($checkedval) {
 				echo "<link rel='standout' href='" . get_permalink($post_id) . "' />\n";
-			} else {
-            if ($linkval && $linkjson) {
-               $objJson = $json->decode($linkjson);
-               foreach($objJson->val as $val) {
-                  echo "<link rel='standout' href='" . $val . "' />\n";
-               }
-					//echo "<link rel='standout' href='" . html_entity_decode($linkval) . "' />\n";
-				}
 			}
+         if ($linkval && $linkjson) {
+            $objJson = $json->decode($linkjson);
+            foreach($objJson->val as $val) {
+               echo "<link rel='standout' href='" . $val . "' />\n";
+            }
+         }
       }
 
       function weekNow ()
