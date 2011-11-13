@@ -30,7 +30,11 @@ The plugin is the work of [Contextly](http://contextly.com "Contextly"), a relat
 
 = How does it work? =
 
-When you select one of your posts as a standout story, the plugin puts a special link in the header of the story, which your readers won't see, but Google News will. If you re-blog or reference a great story someone else wrote, you can use the special standout link button on the Visual Editor bar to give them credit. The links in your post's header look like this: `<link rel='standout' href='http://www.nytimes.com/2011/10/30/business/luck-is-just-the-spark-for-business-giants.html' />`
+When you select one of your posts as a standout story, the plugin puts a special link in the header of the story, which your readers won't see, but Google News will. If you re-blog or reference a great story someone else wrote, you can use the special standout link button on the Visual Editor bar to give them credit. The links in your post's header look like this: `<link rel='standout' href='http://www.nytimes.com/2011/10/30/business/luck-is-just-the-spark-for-business-giants.html' />`   
+
+= When I press the Standout Story button in Wordpress's Visual Editor, nothing happens? Why not?
+
+The Standout Story button works just like the Link button. First, you must highlight the text you want to link to in the body of your post, then hit the Standout link button. Then you will be able to link to someone else's great story in the body of your post, and the plugin will add the special link into your post's header.
 
 = What will Google News do with the links? =
 
